@@ -1,0 +1,38 @@
+<ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+  <li class="me-2">
+    <a href="" aria-current="page" class="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">Estacionamientos</a>
+  </li>
+</ul>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">Numero</th>
+        <th scope="col" class="px-6 py-3">Usuario</th>
+        <th scope="col" class="px-6 py-3">Tipo</th>
+        <th scope="col" class="px-6 py-3">Estado</th>
+        <th scope="col" class="px-6 py-3">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of parkingLots" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          {{item.parkingNumber}}
+        </th>
+        <td class="px-6 py-4">
+          {{item.email}}
+        </td>
+        <td class="px-6 py-4">
+          {{item.type}}
+        </td>
+        <td class="px-6 py-4">
+          {{item.status}}
+        </td>
+        <td class="px-6 py-4">
+          <button (click)="deleteParkingLot(item._id)" class="bg-red-500 text-white px-4 py-2 rounded">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

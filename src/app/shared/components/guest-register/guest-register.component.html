@@ -1,0 +1,81 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="space-y-4">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-white">
+    </a>
+    <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
+          Registro de invitados
+        </h1>
+        <div>
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre completo</label>
+          <input formControlName="fullName" type="text" id="name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Nombre completo" required>
+          <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert" [hidden]="formulario.get('fullName')?.valid || formulario.get('fullName')?.pristine">
+            @if (formulario.get('fullName')?.errors?.['required']) {
+              <div class="text-red-500 text-sm">El nombre es obligatorio.</div>
+            }
+            @if (formulario.get('fullName')?.errors?.['minlength']) {
+              <div class="text-red-500 text-sm">
+                El nombre completo debe tener al menos {{ formulario.get('fullName')?.errors?.['minlength']?.requiredLength }} caracteres.
+              </div>
+            }
+            @if (formulario.get('fullName')?.errors?.['maxlength']) {
+              <div class="text-red-500 text-sm">
+                El nombre completo no puede tener más de {{ formulario.get('fullName')?.errors?.['maxlength']?.requiredLength }} caracteres.
+              </div>
+            }
+          </div>
+        </div>
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico</label>
+          <input formControlName="email" type="email" id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@company.com" required>
+          <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert" [hidden]="formulario.get('email')?.valid || formulario.get('email')?.pristine">
+            @if (formulario.get('email')?.errors?.['required']) {
+              <div class="text-red-500 text-sm">El correo electrónico es obligatorio.</div>
+            }
+            @if (formulario.get('email')?.errors?.['email']) {
+              <div class="text-red-500 text-sm">El correo electrónico no es válido.</div>
+            }
+          </div>
+        </div>
+        <div>
+          <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Número de celular</label>
+          <input formControlName="phoneNumber" type="phone" id="password" placeholder="123456789"
+            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required>
+            <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert" [hidden]="formulario.get('phoneNumber')?.valid || formulario.get('phoneNumber')?.pristine">
+            @if (formulario.get('phoneNumber')?.errors?.['required']) {
+              <div class="text-red-500 text-sm">El número de celular es obligatorio.</div>
+            }
+          </div>
+        </div>
+        <div class="qr">
+          <qrcode (qrCodeURL)="onDownloadQRCode($event)" [qrdata]="myAngularxQrCode" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+        @if(myAngularxQrCode){
+          <div  style="text-align: center;">
+            <a  [href]="qrCodeDownloadLink" download="qrcode" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+              Descargar
+            </a>
+          </div>
+          <br>
+          <div>
+            <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">¡Atención! Este QR solo es valido para una entrada y una salida</span>
+          </div>
+
+        }
+
+
+        <button type="submit"
+          class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Registrar</button>
+      </div>
+    </div>
+  </div>
+</form>

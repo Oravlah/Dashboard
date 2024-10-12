@@ -1,0 +1,45 @@
+<ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+  <li class="me-2">
+    <a href="" aria-current="page" class="inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">
+      Crear Estacionamientos
+    </a>
+  </li>
+</ul>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          Numero
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Tipo
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Acción
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="px-6 py-4">
+          <input type="number" [(ngModel)]="newParkingLot.parkingNumber" class="bg-gray-50 border text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white">
+        </td>
+        <td class="px-6 py-4">
+          <select [(ngModel)]="newParkingLot.type" class="bg-gray-50 border text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white">
+            <option value="estudiante">Estudiante</option>
+            <option value="administrativo">Administrativo</option>
+            <option value="docente">Docente</option>
+            <option value="preferencial">Preferencial</option>
+          </select>
+        </td>
+        <td class="px-6 py-4">
+          <button (click)="createParkingLot()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Crear
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

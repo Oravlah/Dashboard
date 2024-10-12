@@ -1,0 +1,117 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card border-primary mb-3 text-center">
+      <div class="card-header bg-primary text-white">
+        <h2 class="card-title">Estacionamientos</h2>
+      </div>
+      <div class="card-body">
+        <h1 class="card-text">{{total}}</h1>
+      </div>
+      <div class="card-footer bg-transparent border-primary">Footer</div>
+
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card border-success mb-3 text-center">
+        <div class="card-header bg-success text-white">
+          <h2 class="card-title">Disponibles</h2>
+        </div>
+      <div class="card-body">
+        <h1 class="card-text">{{totalDisponibles}}</h1>
+      </div>
+      <div class="card-footer bg-transparent border-success">Footer</div>
+
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-danger mb-3 text-center">
+      <div class="card-header bg-danger text-white">
+        <h2 class="card-title">Ocupados</h2>
+      </div>
+      <div class="card-body">
+        <h1 class="card-text">{{totalOcupados}}</h1>
+      </div>
+      <div class="card-footer bg-transparent border-danger">Footer</div>
+
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-warning mb-3 text-center">
+      <div class="card-header bg-warning">
+        <h2 class="card-title">Reservados</h2>
+      </div>
+      <div class="card-body">
+        <h1 class="card-text">{{totalReservados}}</h1>
+      </div>
+      <div class="card-footer  bg-transparent border-warning">Footer</div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
+  <div class="col">
+    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-2xl dark:border-gray-700 dark:bg-gray-800">
+      <figcaption class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+        Grado de uso de los estacionamientos
+      </figcaption>
+
+      <div class="w-full h-80">
+        <div #gaugeChartElement style="width: 100%; height: 100%;"></div>
+      </div>
+    </figure>
+  </div>
+
+  <div class="col">
+    <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-2xl dark:border-gray-700 dark:bg-gray-800">
+      <figcaption class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+        Porcentajes asignados en los estacionamientos
+      </figcaption>
+      <div class="w-full">
+        <div class="flex flex-col">
+          <div class="flex justify-between mb-2">
+            <span class="text-base font-medium text-green-700 dark:text-white">Estudiantes</span>
+            <span class="text-sm font-medium text-green-700 dark:text-white">{{ porcentajeEstudiante.toFixed(2) }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-green-600 h-2.5 rounded-full" [style.width.%]="porcentajeEstudiante"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col mt-4">
+          <div class="flex justify-between mb-2">
+            <span class="text-base font-medium text-indigo-700 dark:text-white">Docentes</span>
+            <span class="text-sm font-medium text-indigo-700 dark:text-white">{{ porcentajeDocente.toFixed(2) }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-indigo-600 h-2.5 rounded-full" [style.width.%]="porcentajeDocente"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col mt-4">
+          <div class="flex justify-between mb-2">
+            <span class="text-base font-medium text-purple-700 dark:text-white">Administrativos</span>
+            <span class="text-sm font-medium text-purple-700 dark:text-white">{{ porcentajeAdministrativo.toFixed(2) }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-purple-600 h-2.5 rounded-full" [style.width.%]="porcentajeAdministrativo"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col mt-4">
+          <div class="flex justify-between mb-2">
+            <span class="text-base font-medium text-teal-700 dark:text-white">Preferenciales</span>
+            <span class="text-sm font-medium text-teal-700 dark:text-white">{{ porcentajePreferencial.toFixed(2) }}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-teal-600 h-2.5 rounded-full" [style.width.%]="porcentajePreferencial"></div>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+</div>

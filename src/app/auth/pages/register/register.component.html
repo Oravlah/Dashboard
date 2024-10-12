@@ -1,0 +1,88 @@
+<body class="bg-slate-400">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-white">
+        <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+        Abisoft
+      </a>
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
+            Registre su cuenta
+          </h1>
+          <div>
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre completo</label>
+            <input formControlName="name" type="text" id="name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Nombre completo" required>
+            <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert" [hidden]="name?.valid || name?.pristine">
+              @if (name?.errors?.['required']) {
+                <div class="text-red-500 text-sm">El nombre es obligatorio.</div>
+              }
+              @if (name?.errors?.['minlength']) {
+                <div class="text-red-500 text-sm">
+                  El nombre completo debe tener al menos {{ name?.errors?.['minlength']?.requiredLength }} caracteres.
+                </div>
+              }
+              @if (name?.errors?.['maxlength']) {
+                <div class="text-red-500 text-sm">
+                  El nombre completo no puede tener más de {{ name?.errors?.['maxlength']?.requiredLength }} caracteres.
+                </div>
+              }
+            </div>
+          </div>
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico</label>
+            <input formControlName="email" type="email" id="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="name@company.com" required>
+            <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert" [hidden]="email?.valid || email?.pristine">
+              @if (email?.errors?.['required']) {
+                <div class="text-red-500 text-sm">El correo electrónico es obligatorio.</div>
+              }
+              @if (email?.errors?.['email']) {
+                <div class="text-red-500 text-sm">El correo electrónico no es válido.</div>
+              }
+            </div>
+          </div>
+          <div>
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+            <input formControlName="password" type="password" id="password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required>
+              <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert" [hidden]="password?.valid || password?.pristine">
+              @if (password?.errors?.['required']) {
+                <div class="text-red-500 text-sm">La contraseña es obligatoria.</div>
+              }
+            </div>
+          </div>
+          <div>
+            <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirmación de contraseña</label>
+            <input formControlName="password_confirmation" type="password" id="password_confirmation"
+
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required>
+            <div class="p-2 mb-2 mt-2 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+              role="alert" [hidden]="password_confirmation?.valid || password_confirmation?.pristine">
+              @if (password_confirmation?.errors?.['required']) {
+                <div class="text-red-500 text-sm">La confirmación de la contraseña es obligatoria.</div>
+              }
+              @if (form.errors?.['passwordsDoNotMatch']) {
+                <div class="text-red-500 text-sm">Las contraseñas no coinciden.</div>
+              }
+            </div>
+          </div>
+          <button type="submit"
+            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Registrarse</button>
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
+            ¿Ya tienes una cuenta? <a routerLink="/login" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Inicie sesión</a>
+          </p>
+        </div>
+      </div>
+      <app-footer />
+    </div>
+

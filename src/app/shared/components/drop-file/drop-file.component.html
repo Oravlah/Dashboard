@@ -1,0 +1,39 @@
+<!-- file-upload.component.html -->
+<div
+  class="border-2 border-dashed border-gray-300 p-6 rounded-md text-center"
+  (dragover)="onDragOver($event)"
+  (drop)="onDrop($event)"
+>
+  <input type="file" (change)="onFileSelected($event)" hidden #fileInput />
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    (click)="fileInput.click()"
+  >
+    Subir un archivo
+  </button>
+  <p class="mt-4 text-gray-400">Arrastra los archivos aquí</p>
+  @if(files.length > 0){
+
+  <div class="mt-4 grid grid-cols-3 gap-4">
+    <div
+      *ngFor="let file of files; let i = index"
+      class="relative border p-2 rounded-md"
+    >
+      <img [src]="file.preview" class="w-full h-32 object-cover" />
+      <p class="mt-2 text-sm">{{ file.name }}</p>
+      <p class="text-xs text-gray-500">
+        {{ (file.size / 1024).toFixed(1) }} kB
+      </p>
+      <button
+        type="button"
+        (click)="removeFile(i)"
+        class="absolute top-2 right-2 text-red-500"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  }
+</div>
