@@ -1,32 +1,34 @@
-<<<<<<< HEAD
-# Dashboard
-Dashboard.
-=======
-# AngularTailwindDashboard
+<h1 align="center">Hola 👋, Soy Álvaro <img height="40" src="https://emoji.gg/assets/emoji/7333-parrotdance.gif"></h1>
+<h3 align="center">un apasionado por el desarrollo Movíl y Web.</h3>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+- 🔭 Usualmente trabajo en **Angular**
 
-## Development server
+- 🌱 Usualmente estudio **TS, HTML, CSS y Python**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 👯 Eh colaborado en proyectos como **Front-end y Back-end**
 
-## Code scaffolding
+- 📫 Email: **oravla.hhh@gmail.com**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ⚡ ¿De que trata este proyecto?: **Este proyecto trata sobre la creación de un Dashboard/Panel adminsitrativo donde pdoran cargar información y estadisticas en tiempo real de sus proyectos.**
 
-## Build
+<h3 align="center">Contactame:</h3>
+<div align="center">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[![image](https://skillicons.dev/icons?i=instagram)]((https://www.instagram.com/orav1a/))
+[![image](https://skillicons.dev/icons?i=gmail)]((https://mail.google.com/mail/u/1/?pli=1#inbox))
+[![image](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/innonautas/)
 
-## Running unit tests
+</div>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h3 align="center">Languages and Tools:</h3>
 
-## Running end-to-end tests
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=typescript,flowbite,html,css,git,gitlab,windows&perline=5" />
+  </a>
+</p>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> 52f4400 (Cargando proyecto)
+<p align= "center">
+  <img height= "150" src="https://github-readme-stats.vercel.app/api?username=Oravlah&theme=react&show_icons=true&include_all_commits=true" />
+  <img height= "150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Oravlah&theme=react&layout=compact" />
+</p>
