@@ -24,7 +24,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=typescript,flowbite,html,css,git,gitlab,windows&perline=5" />
+    <img src="https://skillicons.dev/icons?i=typescript,html,css,git,gitlab,windows&perline=5" />
   </a>
 </p>
 
